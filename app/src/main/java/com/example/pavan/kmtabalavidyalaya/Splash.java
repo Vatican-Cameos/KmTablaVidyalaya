@@ -16,6 +16,8 @@ import com.skyfishjy.library.RippleBackground;
  */
 public class Splash extends AppCompatActivity {
     MediaPlayer ringSplash;
+
+    //git set
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
