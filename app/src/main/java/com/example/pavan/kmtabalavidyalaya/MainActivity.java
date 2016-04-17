@@ -15,6 +15,8 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.pavan.kmtabalavidyalaya.aboutGuru.AboutGuru;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -74,6 +76,10 @@ public class MainActivity extends AppCompatActivity {
               Log.i("clicked", " Clicked on Item " + position);
                 if(position == 3){
                     Intent i = new Intent(MainActivity.this , ReachOut.class);
+                    startActivity(i);
+                }
+                if(position == 1){
+                    Intent i = new Intent (MainActivity.this, AboutGuru.class);
                     startActivity(i);
                 }
                }
