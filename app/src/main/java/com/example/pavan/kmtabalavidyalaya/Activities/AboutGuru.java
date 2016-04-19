@@ -1,13 +1,13 @@
-package com.example.pavan.kmtabalavidyalaya.aboutGuru;
+package com.example.pavan.kmtabalavidyalaya.Activities;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.AppCompatCheckBox;
 import android.widget.GridView;
 
 import com.example.pavan.kmtabalavidyalaya.R;
+import com.example.pavan.kmtabalavidyalaya.Adapters.CustomAdapter;
 
 import java.util.ArrayList;
 
@@ -24,8 +24,12 @@ public class AboutGuru extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about_guru);
+        init();
 
 
+    }
+
+    private void init() {
         gv=(GridView) findViewById(R.id.gridView1);
         gv.setAdapter(new CustomAdapter(this, prgmNameList,prgmImages));
     }

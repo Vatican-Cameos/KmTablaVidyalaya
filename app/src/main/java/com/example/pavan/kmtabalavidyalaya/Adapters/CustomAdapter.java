@@ -1,4 +1,4 @@
-package com.example.pavan.kmtabalavidyalaya.aboutGuru;
+package com.example.pavan.kmtabalavidyalaya.Adapters;
 
 /**
  * Created by Pavan on 02-04-2016.
@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.pavan.kmtabalavidyalaya.MainActivity;
+import com.example.pavan.kmtabalavidyalaya.Activities.AboutGuru;
 import com.example.pavan.kmtabalavidyalaya.R;
 
 public class CustomAdapter extends BaseAdapter{

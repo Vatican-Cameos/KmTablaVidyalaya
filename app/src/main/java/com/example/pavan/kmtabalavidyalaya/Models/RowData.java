@@ -1,4 +1,4 @@
-package com.example.pavan.kmtabalavidyalaya;
+package com.example.pavan.kmtabalavidyalaya.Models;
 
 /**
  * Created by Pavan on 14-03-2016.
@@ -8,7 +8,7 @@ public class RowData {
 
     private int imageUrl;
 
-    RowData(String s1 , int i){
+    public RowData(String s1, int i){
        text = s1;
        imageUrl  = i;
     }

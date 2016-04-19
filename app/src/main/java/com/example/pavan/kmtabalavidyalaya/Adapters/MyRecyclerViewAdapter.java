@@ -1,18 +1,16 @@
-package com.example.pavan.kmtabalavidyalaya;
+package com.example.pavan.kmtabalavidyalaya.Adapters;
 
 import android.support.v7.widget.RecyclerView;
 
 
-
-
-import android.graphics.Color;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.pavan.kmtabalavidyalaya.R;
+import com.example.pavan.kmtabalavidyalaya.Models.RowData;
 
 import java.util.ArrayList;
 

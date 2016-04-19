@@ -1,21 +1,18 @@
-package com.example.pavan.kmtabalavidyalaya;
+package com.example.pavan.kmtabalavidyalaya.Activities;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 
-import com.example.pavan.kmtabalavidyalaya.aboutGuru.AboutGuru;
+import com.example.pavan.kmtabalavidyalaya.Helpers.DividerItemDecoration;
+import com.example.pavan.kmtabalavidyalaya.Adapters.MyRecyclerViewAdapter;
+import com.example.pavan.kmtabalavidyalaya.R;
+import com.example.pavan.kmtabalavidyalaya.Models.RowData;
 
 import java.util.ArrayList;
 
@@ -24,32 +21,62 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     ArrayList results;
+    RecyclerView recyclerView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
        // setSupportActionBar(toolbar);
         setContentView(R.layout.mainmenu);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.drawable.kmtv_toolbar_icon_hd);
 
+        init();
+        rowDataInitialization();
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
 
+
+        recyclerViewInit();
+
+
+
+        listeners();
+
+
+
+
+    }
+
+
+
+
+    private void init() {
+        recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+
+
+
+
+    }
+
+    private void rowDataInitialization() {
         // this is data fro recycler view
         RowData itemsData[] = { new RowData("The Vidyalaya",R.drawable.sir),
                 new RowData("About Guruji",R.drawable.roopu),
                 new RowData("News Feed",R.drawable.news_resized),
                 new RowData("Reach Us",R.drawable.location),
-               };
+        };
         results = new ArrayList<RowData>();
         for(int i = 0 ; i < itemsData.length ; i++)
             results.add(itemsData[i]);
+    }
 
-
-        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+    private void recyclerViewInit() {
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -58,22 +85,14 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView.ItemDecoration itemDecoration =
                 new DividerItemDecoration(this, LinearLayoutManager.VERTICAL);
         mRecyclerView.addItemDecoration(itemDecoration);
+    }
 
-
-      /*  // 2. set layoutManger
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        // 3. create an adapter
-        MyAdapter mAdapter = new MyAdapter(itemsData);
-        mAdapter.notifyDataSetChanged();
-        // 4. set adapter
-        recyclerView.setAdapter(mAdapter);
-        // 5. set item animator to DefaultAnimator
-        recyclerView.setItemAnimator(new DefaultItemAnimator());*/
+    private void listeners() {
 
         ((MyRecyclerViewAdapter) mAdapter).setOnItemClickListener(new MyRecyclerViewAdapter.MyClickListener() {
             @Override
-             public void onItemClick(int position, View v) {
-              Log.i("clicked", " Clicked on Item " + position);
+            public void onItemClick(int position, View v) {
+                Log.i("clicked", " Clicked on Item " + position);
                 if(position == 3){
                     Intent i = new Intent(MainActivity.this , ReachOut.class);
                     startActivity(i);
@@ -82,9 +101,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent i = new Intent (MainActivity.this, AboutGuru.class);
                     startActivity(i);
                 }
-               }
-             });
-
-
+            }
+        });
     }
 }
