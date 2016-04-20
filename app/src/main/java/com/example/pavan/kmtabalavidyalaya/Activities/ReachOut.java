@@ -21,7 +21,7 @@ public class ReachOut extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.reach_out);
+        setContentView(R.layout.activity_reach_out);
         init();
         listeners();
 

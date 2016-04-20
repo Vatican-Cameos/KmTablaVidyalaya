@@ -61,9 +61,9 @@ public class CustomAdapter extends BaseAdapter{
         Holder holder=new Holder();
         View rowView;
 
-        rowView = inflater.inflate(R.layout.guru_content_list, null);
-        holder.tv=(TextView) rowView.findViewById(R.id.textView1);
-        holder.img=(ImageView) rowView.findViewById(R.id.imageView1);
+        rowView = inflater.inflate(R.layout.item_about_guru, null);
+        holder.tv=(TextView) rowView.findViewById(R.id.tvTitle);
+        holder.img=(ImageView) rowView.findViewById(R.id.ivThumbnail);
 
         holder.tv.setText(result[position]);
         holder.img.setImageResource(imageId[position]);

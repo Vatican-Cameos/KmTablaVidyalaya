@@ -32,19 +32,13 @@ public class MainActivity extends AppCompatActivity {
 
        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
        // setSupportActionBar(toolbar);
-        setContentView(R.layout.mainmenu);
+        setContentView(R.layout.activity_main_menu);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.drawable.kmtv_toolbar_icon_hd);
 
         init();
         rowDataInitialization();
-
-
-
         recyclerViewInit();
-
-
-
         listeners();
 
 

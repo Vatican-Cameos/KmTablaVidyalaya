@@ -7,4 +7,6 @@
     <color name="colorPrimaryDark">#ffbf00</color>
     <color name = "colorPrimary">#4d201d</color>
     <color name = "superLight">#fcf2cd</color>
+    <color name = "solidBlack">#000</color>
+
 </resources>
