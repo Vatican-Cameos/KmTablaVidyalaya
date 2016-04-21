@@ -12,7 +12,6 @@ import android.view.View;
 import com.example.pavan.kmtabalavidyalaya.Helpers.DividerItemDecoration;
 import com.example.pavan.kmtabalavidyalaya.Adapters.MyRecyclerViewAdapter;
 import com.example.pavan.kmtabalavidyalaya.R;
-import com.example.pavan.kmtabalavidyalaya.Models.RowData;
 
 import java.util.ArrayList;
 

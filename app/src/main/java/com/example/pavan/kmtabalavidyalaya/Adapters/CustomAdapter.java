@@ -3,7 +3,11 @@ package com.example.pavan.kmtabalavidyalaya.Adapters;
 /**
  * Created by Pavan on 02-04-2016.
  */
+import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -14,13 +18,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pavan.kmtabalavidyalaya.Activities.AboutGuru;
+import com.example.pavan.kmtabalavidyalaya.Activities.GuruDetails;
 import com.example.pavan.kmtabalavidyalaya.R;
+
+import butterknife.Bind;
 
 public class CustomAdapter extends BaseAdapter{
 
     String [] result;
     Context context;
     int [] imageId;
+
     private static LayoutInflater inflater=null;
     public CustomAdapter(AboutGuru mainActivity, String[] prgmNameList, int[] prgmImages) {
         // TODO Auto-generated constructor stub
@@ -68,14 +76,16 @@ public class CustomAdapter extends BaseAdapter{
         holder.tv.setText(result[position]);
         holder.img.setImageResource(imageId[position]);
 
-        rowView.setOnClickListener(new OnClickListener() {
+        /*rowView.setOnClickListener(new OnClickListener() {
 
+            @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                Toast.makeText(context, "You Clicked "+result[position], Toast.LENGTH_LONG).show();
+
+
             }
-        });
+        });*/
 
         return rowView;
     }

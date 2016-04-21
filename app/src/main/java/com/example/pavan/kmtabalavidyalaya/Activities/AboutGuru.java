@@ -1,10 +1,16 @@
 package com.example.pavan.kmtabalavidyalaya.Activities;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import com.example.pavan.kmtabalavidyalaya.R;
 import com.example.pavan.kmtabalavidyalaya.Adapters.CustomAdapter;
@@ -23,14 +29,29 @@ public class AboutGuru extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.about_guru);
+        setContentView(R.layout.activity_about_guru);
         init();
 
+        gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getApplicationContext(), "You Clicked ", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent("android.intent.action.guru");
+
+
+                ActivityOptionsCompat options = ActivityOptionsCompat.
+                        makeSceneTransitionAnimation(AboutGuru.this,view, "thumbnail_transition");
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    startActivity(intent, options.toBundle());
+                }
+            }
+        });
     }
 
-    private void init() {
+        private void init() {
         gv=(GridView) findViewById(R.id.gridView1);
         gv.setAdapter(new CustomAdapter(this, prgmNameList,prgmImages));
     }
+
 }
