@@ -32,26 +32,11 @@ public class AboutGuru extends AppCompatActivity {
         setContentView(R.layout.activity_about_guru);
         init();
 
-        gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getApplicationContext(), "You Clicked ", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent("android.intent.action.guru");
-
-
-                ActivityOptionsCompat options = ActivityOptionsCompat.
-                        makeSceneTransitionAnimation(AboutGuru.this,view, "thumbnail_transition");
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                    startActivity(intent, options.toBundle());
-                }
-            }
-        });
     }
 
         private void init() {
-        gv=(GridView) findViewById(R.id.gridView1);
-        gv.setAdapter(new CustomAdapter(this, prgmNameList,prgmImages));
+
     }
 
 }

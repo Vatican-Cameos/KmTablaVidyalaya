@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.pavan.kmtabalavidyalaya.Models.RowData;
 import com.example.pavan.kmtabalavidyalaya.R;
 
 import java.util.ArrayList;
