@@ -61,6 +61,7 @@ public class GuruDetailsAdapter extends RecyclerView.Adapter<GuruDetailsAdapter.
 
         holder.tvMovieTitle.setTypeface(robotobold);
 
+
         if (guruModelItem.getTitle() != null)
             holder.tvMovieTitle.setText(guruModelItem.getTitle());
 
