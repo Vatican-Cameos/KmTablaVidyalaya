@@ -40,7 +40,7 @@ public class GuruDetailsAdapter extends RecyclerView.Adapter<GuruDetailsAdapter.
         this.mContext = context;
         this.mCardTapListener = cardTapListener;
 
-        robotobold = Typeface.createFromAsset(mContext.getAssets(), "fonts/robotomedium.ttf");
+     //   robotobold = Typeface.createFromAsset(mContext.getAssets(), "fonts/robotomedium.ttf");
     }
 
 
@@ -59,7 +59,7 @@ public class GuruDetailsAdapter extends RecyclerView.Adapter<GuruDetailsAdapter.
 
         final GuruModel guruModelItem = mDataSet.get(position);
 
-        holder.tvMovieTitle.setTypeface(robotobold);
+      //  holder.tvMovieTitle.setTypeface(robotobold);
 
 
         if (guruModelItem.getTitle() != null)

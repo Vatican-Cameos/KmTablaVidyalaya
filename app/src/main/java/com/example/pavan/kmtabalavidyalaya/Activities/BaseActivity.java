@@ -11,9 +11,6 @@ import android.support.v7.widget.Toolbar;
 import butterknife.ButterKnife;
 
 
-/**
- * Created by Chirag Shenoy on 04-Feb-16.
- */
 public abstract class BaseActivity extends AppCompatActivity {
 
 
