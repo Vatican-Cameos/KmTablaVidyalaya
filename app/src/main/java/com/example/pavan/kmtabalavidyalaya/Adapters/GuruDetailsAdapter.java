@@ -16,7 +16,6 @@ import android.widget.TextView;
 
 import com.example.pavan.kmtabalavidyalaya.Models.GuruModel;
 import com.example.pavan.kmtabalavidyalaya.R;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,9 +24,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 
-/**
- * Created by Chirag Shenoy on 17-Feb-16.
- */
+
 public class GuruDetailsAdapter extends RecyclerView.Adapter<GuruDetailsAdapter.ViewHolder> {
 
     private final Context mContext;
@@ -40,7 +37,7 @@ public class GuruDetailsAdapter extends RecyclerView.Adapter<GuruDetailsAdapter.
         this.mContext = context;
         this.mCardTapListener = cardTapListener;
 
-     //   robotobold = Typeface.createFromAsset(mContext.getAssets(), "fonts/robotomedium.ttf");
+        robotobold = Typeface.createFromAsset(mContext.getAssets(), "fonts/robotomedium.ttf");
     }
 
 
@@ -50,7 +47,7 @@ public class GuruDetailsAdapter extends RecyclerView.Adapter<GuruDetailsAdapter.
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View rootView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_about_guru, parent, false);
+        View rootView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_guru_list, parent, false);
         return new ViewHolder(rootView);
     }
 
@@ -59,12 +56,13 @@ public class GuruDetailsAdapter extends RecyclerView.Adapter<GuruDetailsAdapter.
 
         final GuruModel guruModelItem = mDataSet.get(position);
 
-      //  holder.tvMovieTitle.setTypeface(robotobold);
+        holder.tvMovieTitle.setTypeface(robotobold);
 
 
         if (guruModelItem.getTitle() != null)
             holder.tvMovieTitle.setText(guruModelItem.getTitle());
 
+        holder.ivThumbnail.setImageResource(mDataSet.get(position).getImage());
 
 
         holder.cvMovie.setOnClickListener(new View.OnClickListener() {
@@ -90,7 +88,7 @@ public class GuruDetailsAdapter extends RecyclerView.Adapter<GuruDetailsAdapter.
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         @Bind(R.id.ivThumbnail)
-        ImageView ivMovieThumbnail;
+        ImageView ivThumbnail;
 
         @Bind(R.id.tvTitle)
         TextView tvMovieTitle;

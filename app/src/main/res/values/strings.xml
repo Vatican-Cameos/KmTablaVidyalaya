@@ -2,5 +2,45 @@
     <string name="app_name">KM Tabala Vidyalaya</string>
     <string name="action_settings">Settings</string>
     <string name="thumbnail_transition">thumbnail_transition</string>
+    <string name="tvTitle_transition">tvTitle_transition</string>
     <string name="card_height">180dp</string>
+
+    <string name ="guru_about">Pt. Rajgopal Kallurkar was born as the second son to Shri Kirshnamurthy Achar and mt.
+        Laxmibai, who hail from Kallur, a small village
+        near Raichur in north Karnataka where his family practiced the centuries-old priestly vocation.
+     Pt. Kallurkar was drawn to the Tabala from a young age.
+    Recognising his talent, the family moved to Dharwad to help him pursue his dream.Under the able
+    tutelage of Pt.Girish Awate, then Professor of Tabala at Karnatak Music College, Dharwad 15- year old Kallurkar\'s percussive talent bloomed.
+        He also pursued formal courses in Karnatak University - the six-year Sangeeta Ratna degree, karnataka government\'s
+     Tabala Vidwat and MA in Music and Sanskrit, all of which he topped and was honoured with a Gold Medal.</string>
+
+
+    <string name = "guru_achievements">Pt. Rajgopal Kallurkar was born as the second son to Shri Kirshnamurthy Achar and mt.
+        Laxmibai, who hail from Kallur, a small village
+        near Raichur in north Karnataka where his family practiced the centuries-old priestly vocation.
+     Pt. Kallurkar was drawn to the Tabala from a young age.
+    Recognising his talent, the family moved to Dharwad to help him pursue his dream.Under the able
+    tutelage of Pt.Girish Awate, then Professor of Tabala at Karnatak Music College, Dharwad 15- year old Kallurkar\'s percussive talent bloomed.
+        He also pursued formal courses in Karnatak University - the six-year Sangeeta Ratna degree, karnataka government\'s
+     Tabala Vidwat and MA in Music and Sanskrit, all of which he topped and was honoured with a Gold Medal</string>
+
+
+    <string name = "guru_awards">Pt. Rajgopal Kallurkar was born as the second son to Shri Kirshnamurthy Achar and mt.
+        Laxmibai, who hail from Kallur, a small village
+        near Raichur in north Karnataka where his family practiced the centuries-old priestly vocation.
+     Pt. Kallurkar was drawn to the Tabala from a young age.
+    Recognising his talent, the family moved to Dharwad to help him pursue his dream.Under the able
+    tutelage of Pt.Girish Awate, then Professor of Tabala at Karnatak Music College, Dharwad 15- year old Kallurkar\'s percussive talent bloomed.
+        He also pursued formal courses in Karnatak University - the six-year Sangeeta Ratna degree, karnataka government\'s
+     Tabala Vidwat and MA in Music and Sanskrit, all of which he topped and was honoured with a Gold Medal</string>
+
+
+    <string name = "guru_info">Pt. Rajgopal Kallurkar was born as the second son to Shri Kirshnamurthy Achar and mt.
+        Laxmibai, who hail from Kallur, a small village
+        near Raichur in north Karnataka where his family practiced the centuries-old priestly vocation.
+     Pt. Kallurkar was drawn to the Tabala from a young age.
+    Recognising his talent, the family moved to Dharwad to help him pursue his dream.Under the able
+    tutelage of Pt.Girish Awate, then Professor of Tabala at Karnatak Music College, Dharwad 15- year old Kallurkar\'s percussive talent bloomed.
+        He also pursued formal courses in Karnatak University - the six-year Sangeeta Ratna degree, karnataka government\'s
+     Tabala Vidwat and MA in Music and Sanskrit, all of which he topped and was honoured with a Gold Medal</string>
 </resources>

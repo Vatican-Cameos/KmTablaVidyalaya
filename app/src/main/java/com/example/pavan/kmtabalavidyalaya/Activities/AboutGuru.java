@@ -1,23 +1,18 @@
 package com.example.pavan.kmtabalavidyalaya.Activities;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityOptionsCompat;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.util.Pair;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.GridView;
-import android.widget.Toast;
 
 import com.example.pavan.kmtabalavidyalaya.Adapters.GuruDetailsAdapter;
 import com.example.pavan.kmtabalavidyalaya.Models.GuruModel;
 import com.example.pavan.kmtabalavidyalaya.R;
-import com.example.pavan.kmtabalavidyalaya.Adapters.CustomAdapter;
 
 import java.util.ArrayList;
 
@@ -57,6 +52,21 @@ public class AboutGuru extends BaseActivity {
         mGuruListingAdapter = new GuruDetailsAdapter(getApplicationContext(), new GuruDetailsAdapter.CardTapListener() {
             @Override
             public void onTap(View v, GuruModel movieModel) {
+                Intent intent = new Intent(getApplicationContext(), GuruDetails.class);
+
+                intent.putExtra("image", movieModel.getImage());
+                intent.putExtra("name", movieModel.getTitle());
+                intent.putExtra("desc", movieModel.getDesc());
+                Pair<View,String> why  = Pair.create((View)v,getApplication().getResources().getString(R.string.thumbnail_transition));
+                Pair<View,String> kai  = Pair.create((View)v,getApplication().getResources().getString(R.string.tvTitle_transition));
+                //ActivityOptionsCompat options = ActivityOptionsCompat].
+                  //      makeSceneTransitionAnimation(AboutGuru.this, v, getApplication().getResources().getString(R.string.thumbnail_transition));
+
+                ActivityOptionsCompat options = ActivityOptionsCompat.
+                     makeSceneTransitionAnimation(AboutGuru.this, why);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    startActivity(intent, options.toBundle());
+                }
 
             }
 
@@ -64,8 +74,10 @@ public class AboutGuru extends BaseActivity {
         });
 
 
-        mGuruModels.add(new GuruModel("KMTV"));
-        mGuruModels.add(new GuruModel("Hello"));
+        mGuruModels.add(new GuruModel("About Guruji",R.drawable.kmtv,getApplication().getResources().getString(R.string.guru_about)));
+        mGuruModels.add(new GuruModel("Achievements",R.drawable.abc,getApplication().getResources().getString(R.string.guru_achievements)));
+        mGuruModels.add(new GuruModel("Awards",R.drawable.news, getApplication().getResources().getString(R.string.guru_awards)));
+        mGuruModels.add(new GuruModel("Info",R.drawable.sir, "some random information"));
         mGuruListingAdapter.setDataSet(mGuruModels);
         mGuruListingAdapter.notifyDataSetChanged();
 
