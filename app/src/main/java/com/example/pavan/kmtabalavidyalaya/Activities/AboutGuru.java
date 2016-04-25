@@ -63,7 +63,7 @@ public class AboutGuru extends BaseActivity {
                   //      makeSceneTransitionAnimation(AboutGuru.this, v, getApplication().getResources().getString(R.string.thumbnail_transition));
 
                 ActivityOptionsCompat options = ActivityOptionsCompat.
-                     makeSceneTransitionAnimation(AboutGuru.this, why);
+                     makeSceneTransitionAnimation(AboutGuru.this, why,kai);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     startActivity(intent, options.toBundle());
                 }
@@ -74,10 +74,10 @@ public class AboutGuru extends BaseActivity {
         });
 
 
-        mGuruModels.add(new GuruModel("About Guruji",R.drawable.kmtv,getApplication().getResources().getString(R.string.guru_about)));
-        mGuruModels.add(new GuruModel("Achievements",R.drawable.abc,getApplication().getResources().getString(R.string.guru_achievements)));
-        mGuruModels.add(new GuruModel("Awards",R.drawable.news, getApplication().getResources().getString(R.string.guru_awards)));
-        mGuruModels.add(new GuruModel("Info",R.drawable.sir, "some random information"));
+        mGuruModels.add(new GuruModel("About Guruji",R.drawable.about_guru_early_life,getApplication().getResources().getString(R.string.guru_about)));
+        mGuruModels.add(new GuruModel("Achievements",R.drawable.about_guru_sir,getApplication().getResources().getString(R.string.guru_achievements)));
+        mGuruModels.add(new GuruModel("Awards",R.drawable.about_guru_sir_c, getApplication().getResources().getString(R.string.guru_awards)));
+        mGuruModels.add(new GuruModel("Info",R.drawable.about_guru_sir_d, "some random information"));
         mGuruListingAdapter.setDataSet(mGuruModels);
         mGuruListingAdapter.notifyDataSetChanged();
 

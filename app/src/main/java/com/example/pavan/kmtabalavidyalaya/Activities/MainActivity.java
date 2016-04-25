@@ -60,8 +60,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void rowDataInitialization() {
         // this is data fro recycler view
-        RowData itemsData[] = { new RowData("The Vidyalaya",R.drawable.sir),
-                new RowData("About Guruji",R.drawable.roopu),
+        RowData itemsData[] = {
+                new RowData("About Guruji",R.drawable.sir),
+                new RowData("The Vidyalaya",R.drawable.roopu),
                 new RowData("News Feed",R.drawable.news_resized),
                 new RowData("Reach Us",R.drawable.location),
         };
@@ -91,8 +92,12 @@ public class MainActivity extends AppCompatActivity {
                     Intent i = new Intent(MainActivity.this , ReachOut.class);
                     startActivity(i);
                 }
-                if(position == 1){
+                if(position == 0){
                     Intent i = new Intent (MainActivity.this, AboutGuru.class);
+                    startActivity(i);
+                }
+                if(position == 2){
+                    Intent i = new Intent (MainActivity.this, NewsFeed.class);
                     startActivity(i);
                 }
             }

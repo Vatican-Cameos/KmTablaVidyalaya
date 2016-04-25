@@ -32,7 +32,7 @@
                 android:scaleType="fitXY"
 
                 android:id="@+id/ivMainMenu"
-                android:src="@drawable/gifimage"
+
                 />
             <!--<ImageView
                 android:id="@+id/ivMainMenu"
