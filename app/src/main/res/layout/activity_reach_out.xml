@@ -5,6 +5,16 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Call Pt.Rajgopal Kallurkar"
+        android:id="@+id/bRajCall"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Call a Co-ordinator"
+        android:id="@+id/bCoCall"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Map"
         android:id="@+id/bMap"/>
 

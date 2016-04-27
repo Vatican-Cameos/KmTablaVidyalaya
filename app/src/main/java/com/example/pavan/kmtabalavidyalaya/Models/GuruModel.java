@@ -9,16 +9,17 @@ public class GuruModel extends BaseModel {
 
 
 
-
+    private int backdrop;
     private String desc;
     private int imageId;
     private String title;
 
 
-    public GuruModel(String title, int imageId, String desc){
+    public GuruModel(String title, int imageId, String desc, int zakeerbig){
         this.title = title;
         this.imageId = imageId;
         this.desc = desc;
+        this.backdrop = zakeerbig;
     }
 
     public String getDesc(){return desc;}
@@ -31,6 +32,7 @@ public class GuruModel extends BaseModel {
     }
 
 
-
-
+    public int getBackdrop() {
+        return backdrop;
+    }
 }

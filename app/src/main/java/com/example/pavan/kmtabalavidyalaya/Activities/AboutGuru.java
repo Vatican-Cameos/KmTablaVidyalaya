@@ -51,12 +51,13 @@ public class AboutGuru extends BaseActivity {
 
         mGuruListingAdapter = new GuruDetailsAdapter(getApplicationContext(), new GuruDetailsAdapter.CardTapListener() {
             @Override
-            public void onTap(View v, GuruModel movieModel) {
+            public void onTap(View v, GuruModel guruModel) {
                 Intent intent = new Intent(getApplicationContext(), GuruDetails.class);
 
-                intent.putExtra("image", movieModel.getImage());
-                intent.putExtra("name", movieModel.getTitle());
-                intent.putExtra("desc", movieModel.getDesc());
+                intent.putExtra("image", guruModel.getImage());
+                intent.putExtra("name", guruModel.getTitle());
+                intent.putExtra("desc", guruModel.getDesc());
+                intent.putExtra("backdrop", guruModel.getBackdrop());
                 Pair<View,String> why  = Pair.create((View)v,getApplication().getResources().getString(R.string.thumbnail_transition));
                 Pair<View,String> kai  = Pair.create((View)v,getApplication().getResources().getString(R.string.tvTitle_transition));
                 //ActivityOptionsCompat options = ActivityOptionsCompat].
@@ -74,10 +75,10 @@ public class AboutGuru extends BaseActivity {
         });
 
 
-        mGuruModels.add(new GuruModel("About Guruji",R.drawable.about_guru_early_life,getApplication().getResources().getString(R.string.guru_about)));
-        mGuruModels.add(new GuruModel("Achievements",R.drawable.about_guru_sir,getApplication().getResources().getString(R.string.guru_achievements)));
-        mGuruModels.add(new GuruModel("Awards",R.drawable.about_guru_sir_c, getApplication().getResources().getString(R.string.guru_awards)));
-        mGuruModels.add(new GuruModel("Info",R.drawable.about_guru_sir_d, "some random information"));
+        mGuruModels.add(new GuruModel("About Guruji",R.drawable.about_guru_early_life,getApplication().getResources().getString(R.string.guru_about),R.drawable.zakeerbig));
+        mGuruModels.add(new GuruModel("Achievements",R.drawable.about_guru_sir,getApplication().getResources().getString(R.string.guru_achievements), R.drawable.about_guru_sir_btin));
+        mGuruModels.add(new GuruModel("Awards",R.drawable.about_guru_sir_c, getApplication().getResources().getString(R.string.guru_awards), R.drawable.sir));
+        mGuruModels.add(new GuruModel("Info",R.drawable.about_guru_sir_d, "some random information", R.drawable.book));
         mGuruListingAdapter.setDataSet(mGuruModels);
         mGuruListingAdapter.notifyDataSetChanged();
 
