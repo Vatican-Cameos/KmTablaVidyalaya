@@ -36,17 +36,24 @@ public class NewsFeed extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     ArrayList results;
     RecyclerView recyclerView;
+    Firebase myFirebaseRef;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Firebase.setAndroidContext(this);
         setContentView(R.layout.activity_news_feed);
-        Firebase myFirebaseRef = new Firebase("https://kmtv.firebaseio.com/");
+         myFirebaseRef = new Firebase("https://kmtv.firebaseio.com/");
 
         recyclerViewInit();
 
-     /*   Bitmap bmp =  BitmapFactory.decodeResource(getResources(), R.drawable.about_guru_early_life);//your image
+        //bmpToPostSirs();
+
+
+    }
+
+    private void bmpToPostSirs() {
+        Bitmap bmp =  BitmapFactory.decodeResource(getResources(), R.drawable.about_guru_early_life);//your image
         ByteArrayOutputStream bYtE = new ByteArrayOutputStream();
         bmp.compress(Bitmap.CompressFormat.PNG, 100, bYtE);
         bmp.recycle();
@@ -56,8 +63,7 @@ public class NewsFeed extends AppCompatActivity {
         Map<String, String> post = new HashMap<String, String>();
         post.put("imagefile", imageFile);
         post.put("message", "This is a message");
-        myFirebaseRef.push().setValue(post);*/
-
+        myFirebaseRef.push().setValue(post);
     }
 
     private void recyclerViewInit() {

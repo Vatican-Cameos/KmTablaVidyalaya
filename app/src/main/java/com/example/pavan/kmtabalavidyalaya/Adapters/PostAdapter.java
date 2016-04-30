@@ -1,9 +1,12 @@
 package com.example.pavan.kmtabalavidyalaya.Adapters;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -67,8 +70,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
         if (row.getMessage() != null)
             holder.tvPost.setText(row.getMessage());
+        String strBase64 = mDataSet.get(position).getImagefile();
 
-       // holder.ivPost.setImageResource(mDataSet.get(position).getImagefile());
+        byte[] decodedString = Base64.decode(strBase64, Base64.DEFAULT);
+        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+        holder.ivPost.setImageBitmap(decodedByte);
 
 
         holder.cvPost.setOnClickListener(new View.OnClickListener() {

@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
        // setSupportActionBar(toolbar);
         setContentView(R.layout.activity_main_menu);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.drawable.kmtv_toolbar_icon_hd);
+        getSupportActionBar().setIcon(R.drawable.km_logo);
 
         init();
         rowDataInitialization();

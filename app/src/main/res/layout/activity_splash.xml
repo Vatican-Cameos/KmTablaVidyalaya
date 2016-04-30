@@ -3,7 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
 
     android:layout_height="match_parent"
-    android:background = "#4d201d">
+    android:background = "@color/colorPrimary">
 
     <com.skyfishjy.library.RippleBackground
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -11,9 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/content"
-        app:rb_color="#ffbf00"
-        app:rb_radius="32dp"
-        app:rb_rippleAmount="4"
+        app:rb_color="@color/colorPrimaryDark"
+        app:rb_radius="48dp"
+        app:rb_rippleAmount="8"
         app:rb_duration="4000"
         app:rb_scale="6">
         <ImageView
@@ -21,7 +21,7 @@
             android:layout_height="100dp"
             android:layout_centerInParent="true"
             android:id="@+id/centerImage"
-            android:src="@drawable/kmtvsplash"/>
+            android:src="@drawable/km_logo"/>
 
 
     </com.skyfishjy.library.RippleBackground>
