@@ -37,7 +37,7 @@ public class NewsFeed extends AppCompatActivity {
     ArrayList results;
     RecyclerView recyclerView;
     Firebase myFirebaseRef;
-
+//must add fab
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
