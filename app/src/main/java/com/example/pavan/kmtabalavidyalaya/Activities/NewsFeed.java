@@ -1,14 +1,22 @@
 package com.example.pavan.kmtabalavidyalaya.Activities;
 
+import android.app.Dialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Base64;
 import android.util.Log;
+import android.view.View;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.pavan.kmtabalavidyalaya.Adapters.MyRecyclerViewAdapter;
 import com.example.pavan.kmtabalavidyalaya.Adapters.PostAdapter;
@@ -21,11 +29,15 @@ import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
+import com.loopj.android.image.SmartImageView;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 /**
  * Created by kai on 25/4/16.
@@ -37,19 +49,75 @@ public class NewsFeed extends AppCompatActivity {
     ArrayList results;
     RecyclerView recyclerView;
     Firebase myFirebaseRef;
+
+    FloatingActionButton fab;
 //must add fab
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Firebase.setAndroidContext(this);
         setContentView(R.layout.activity_news_feed);
+        ButterKnife.bind(this);
          myFirebaseRef = new Firebase("https://kmtv.firebaseio.com/");
 
         recyclerViewInit();
-
+        onClickListeners();
         //bmpToPostSirs();
 
 
+    }
+
+    private void onClickListeners() {
+        fab = (FloatingActionButton)findViewById(R.id.fab);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // custom dialog
+                final Dialog dialog =  new Dialog(NewsFeed.this);
+
+                dialog.setTitle("Enter Admin Password");
+                dialog.setContentView(R.layout.dialog_pass);
+
+                final EditText etPass = (EditText) dialog.findViewById(R.id.etPass);
+                Button bCheckPass = (Button) dialog.findViewById(R.id.bCheckPass);
+                bCheckPass.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if(etPass.getText().toString().equals("kmtv")){
+                            oneMoreDialog();
+                            Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(getApplicationContext(), "Invalid password", Toast.LENGTH_SHORT).show();
+                            dialog.dismiss();
+                        }
+                    }
+
+                    private void oneMoreDialog() {
+                        final Dialog dialog =  new Dialog(NewsFeed.this);
+
+                        dialog.setTitle("HI");
+                        dialog.setContentView(R.layout.dialog_post);
+                        SmartImageView smv = (SmartImageView) dialog.findViewById(R.id.ivPostImage);
+                        Button bPost = (Button) dialog.findViewById(R.id.bPost);
+                        final EditText ePost = (EditText) dialog.findViewById(R.id.etPostMsg);
+
+                        bPost.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                String postMessage  = ePost.getText().toString();
+
+                            }
+                        });
+                        dialog.show();
+                    }
+                });
+                dialog.show();
+                Window win = dialog.getWindow();
+                win.setLayout(600,400);
+
+            }
+        });
     }
 
     private void bmpToPostSirs() {
